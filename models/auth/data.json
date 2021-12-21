@@ -1,0 +1,23 @@
+
+    [
+        {
+            "id": 1,
+            "email": "email1@nelisofrwares.com",
+            "password": "123456"
+        },
+        {
+            "id": 2,
+            "email": "email2@nelisofrwares.com",
+            "password": "654321"
+        },
+        {
+            "id": 3,
+            "email": "email4@nelisofrwares.com",
+            "password": "135246"
+        },
+        {
+            "id": 4,
+            "email": "email5@nelisofrwares.com",
+            "password": "246135"
+        }
+    ]
