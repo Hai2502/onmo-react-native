@@ -5,9 +5,9 @@ import AuthContext from '../../../context/authContext/AuthContext'
 
 const HomeScreen = () => {
 
-  const {userSignout} = useContext(AuthContext)
+  const userSignout = useContext(AuthContext)
   
-
+ 
   return (
     <View style={styles.container}>
       <Text>Now you're authenticated! Welcome!</Text>
