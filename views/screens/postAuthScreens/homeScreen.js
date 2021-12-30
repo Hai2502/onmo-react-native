@@ -11,7 +11,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <Text>Now you're authenticated! Welcome!</Text>
-      <Button title="LOG OUT" onPress={userSignout} data-testid="logoutBtn" />
+      <Button title="LOG OUT" onPress={userSignout} />
     </View>
   )
 }

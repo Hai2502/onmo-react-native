@@ -1,25 +1,20 @@
 import React from 'react';
-import { render, fireEvent, waitFor , screen} from '@testing-library/react-native';
+import Enzyme from 'enzyme';
 import renderer from 'react-test-renderer';
 import HomeScreen from './homeScreen';
-import { Button } from 'react-native';
-import { userSignout } from "./homeScreen";
-
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import { shallow, configure } from 'enzyme';
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('HomeScreen calls userSignout', () =>{
   it('renders correctly', async () => {
     renderer.create(<HomeScreen />);
    });
    it('should call onPress', () => {
-    const mockOnPress = jest.fn();
-    const component = renderer.create(<Button 
-        title="LOG OUT" 
-        onPress={mockOnPress}           
-    />)
-    const instance = component.getInstance();
-    instance.userSignout(); 
-
-    expect(mockOnPress).toHaveBeenCalled();
+    const mockFunc = jest.fn();
+    const component = shallow(<HomeScreen onPress={mockFunc} />);    
+    component.dive().simulate('press');
+    expect(mockFunc).toHaveBeenCalled();
   });
 
 })

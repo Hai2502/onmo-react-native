@@ -15,8 +15,6 @@
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/stack": "^6.0.11",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-preact-pure": "^3.3.0",
     "expo": "~43.0.2",
     "expo-status-bar": "~1.1.0",
     "react": "17.0.1",
@@ -33,10 +31,21 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@testing-library/react-native": "^9.0.0",
-    "jest": "^27.4.5"
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
+    "jest": "^27.4.5",
+    "jest-enzyme": "^7.1.2",
+    "jest-expo": "^44.0.1"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "jest-expo",
+    "setupFiles": [
+      "./test/jestSetup.js"
+    ],
+    "snapshotSerializers": [
+      "./node_modules/enzyme-to-json/serializer"
+    ]
   },
   "private": true
 }
